@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>THIS IS THE ABOUT {{origin}}</h2>
-    <router-link v-if="origin" to="Hello">Go Home</router-link>
+    <router-link v-if="origin == 'PAGE'" :to="{ path: '/' }">Go back</router-link>
   </div>
 </template>
 
@@ -14,8 +14,7 @@
       };
     },
     mounted() {
-      this.origin = (this.$router.query.origin) ? 'PAGE' : 'COMPONENT';
-      this.origin = 'WAT?!';
+      this.origin = (this.$route.query.origin) ? 'PAGE' : 'COMPONENT';
     },
   };
 </script>
