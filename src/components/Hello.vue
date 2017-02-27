@@ -1,7 +1,7 @@
 <template>
   <div>
     <about-cmp></about-cmp>
-    <router-link to="about">About Page</router-link>
+    <router-link :to="{ path: '/about', query: { origin: 'page' }}">About Page</router-link>
   </div>
 </template>
 
