@@ -2,6 +2,9 @@
   <div>
     <about-cmp></about-cmp>
     <router-link :to="{ path: '/about', query: { origin: 'page' }}">About Page</router-link>
+    &nbsp;|&nbsp;
+    <router-link :to="{ path: '/people' }">People</router-link>
+
   </div>
 </template>
 
