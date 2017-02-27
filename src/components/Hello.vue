@@ -1,6 +1,7 @@
 <template>
   <div>
     <about-cmp></about-cmp>
+    <router-link to="about">About Page</router-link>
   </div>
 </template>
 
