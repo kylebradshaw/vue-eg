@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2> People || Pets </h2>
+    <h2> People | Pets </h2>
     <button @click="clicked">CLICK ME</button>
     <ul>
       <li v-if="show === 'people'" v-for="person in people" :style="{backgroundColor: person.color}">
