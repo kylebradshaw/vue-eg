@@ -1,9 +1,13 @@
 <template>
   <div>
-    <h2> People </h2>
+    <h2> People || Pets </h2>
+    <button @click="clicked">CLICK ME</button>
     <ul>
-      <li v-for="person in people" :style="{backgroundColor: person.color}">
+      <li v-if="show === 'people'" v-for="person in people" :style="{backgroundColor: person.color}">
         {{person.name}}, {{person.age}}
+      </li>
+      <li v-if="show === 'pets'" v-for="pet in pets" :style="{backgroundColor: pet.color}">
+        {{pet.name}}, {{pet.age}}
       </li>
     </ul>
   </div>
@@ -12,11 +16,34 @@
 <script>
   export default {
     name: 'people',
+    methods: {
+      clicked() {
+        this.show = (this.show === 'people') ? 'pets' : 'people';
+      },
+    },
     data() {
       return {
+        show: 'people',
+        pets: [
+          {
+            name: 'Minette',
+            age: 6,
+            color: 'orange',
+          },
+          {
+            name: 'Porter',
+            age: 5,
+            color: 'black',
+          },
+          {
+            name: 'MJ',
+            age: 10,
+            color: 'maroon',
+          },
+        ],
         people: [
           {
-            name: 'Jacque',
+            name: 'Jacqueline',
             age: '40',
             color: 'purple',
           },
@@ -26,7 +53,7 @@
             color: 'pink',
           },
           {
-            name: 'Jordi',
+            name: 'Max',
             age: '40',
             color: 'green',
           },
